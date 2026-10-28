@@ -24,8 +24,11 @@ function colorPic(color, mode) {
 const hex = color.replace("#", "")
 const colors = fetch(`https://www.thecolorapi.com/scheme?hex=${hex}&mode=${mode}&count=6&format=json`)
     .then(res => res.json())
-    .then(data => console.log(data.colors.hex)
-)
-console.log(Array.from(colors))
+    .then(data => {
+    data.colors.forEach( (color) => {
+        console.log(color.hex.value)
+    })
+})
+console.log(colors)
 }
 
