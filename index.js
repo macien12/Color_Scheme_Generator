@@ -7,6 +7,7 @@ colorPicker.value = defaultColor
 
 colorPicker.addEventListener("input", function() {
     const theColor = colorPicker.value
+    colorPic(colorPicker.value)
     console.log(theColor)
 })
 
@@ -17,10 +18,16 @@ function updateAll(event) {
 }
 
 
-fetch("https://www.thecolorapi.com/scheme?hex=4047AB&mode=analogic&count=6&format=json")
+
+
+function colorPic(color) {
+const colors = fetch(`https://www.thecolorapi.com/scheme?hex=${color}&mode=analogic&count=6&format=json`)
     .then(res => res.json())
     .then(data => {
-    data.colors.forEach( color => {
+    data.forEach( color => {
         console.log(color.hex.value)
     })
 })
+console.log(colors)
+}
+
