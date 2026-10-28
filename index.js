@@ -11,24 +11,21 @@ buttonEl.addEventListener("click", function() {
     console.log(theColor)
 })
 
-function updateAll(event) {
-  document.querySelectorAll("p").forEach((p) => {
-    p.style.color = event.target.value;
-  });
-}
-
-
-
-
 function colorPic(color, mode) {
 const hex = color.replace("#", "")
 const colors = fetch(`https://www.thecolorapi.com/scheme?hex=${hex}&mode=${mode}&count=6&format=json`)
     .then(res => res.json())
     .then(data => {
-    data.colors.forEach( (color) => {
-        console.log(color.hex.value)
+    const colorHTML = data.colors.map(color => {
+        return `
+        <div class="color-panel">
+            <div class="color-swatch" style="background-color: ${color.hex.value}"></div>
+        <p>${color.hex.value}</p>
+        </div>
+        `
     })
+    document.getElementById("color-panels").innerHTML = colorHTML
 })
-console.log(colors)
+
 }
 
