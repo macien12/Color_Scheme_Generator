@@ -2,3 +2,18 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+#color-panels {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.color-panel {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+}
+
+.color-swatch {
+    height: 300px;
+}
