@@ -25,12 +25,10 @@ const hex = color.replace("#", "")
 const colors = fetch(`https://www.thecolorapi.com/scheme?hex=${hex}&mode=${mode}&count=6&format=json`)
     .then(res => res.json())
     .then(data => {
-    const colorArr = data.colors.map(color => color.hex.value)
+    data.colors.forEach( (color) => {
+        console.log(color.hex.value)
     })
-
-const colorArr = Array.from(colors)
-console.log(colors)
+})
+console.log(Array.from(colors))
 }
-
-
 
