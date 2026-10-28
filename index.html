@@ -2,14 +2,17 @@
 <html>
     <head>
         <link rel="stylesheet" href="index.css">
+        <!-- Google fonts -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Color Scheme Generator</h1>
         <script src="index.js" defer></script>
-        <div id="mainEl">
-            <div>
-                <input type="color" value="#000000" id="color-picker">
-                <select id="select-element">
+        <div class="mainEl">
+            <div class="colorInputs">
+                <input type="color" value="#F55A5A" id="color-picker" class="colorEl">
+                <select id="select-element" class="selectEl">
                     <option value="monochrome">monochrome</option>
                     <option value="monochrome-dark">monochrome-dark</option>
                     <option value="monochrome-light">monochrome-light</option>
@@ -19,9 +22,15 @@
                     <option value="triad">triad </option>
                     <option value="quad">quad</option>
                 </select>
-                <button id="button-el">Get color scheme</button>
+                <button id="button-el" class="buttonEl">Get color scheme</button>
             </div>
-            <div id="color-panels"></div>
+            <div id="color-panels">
+                <div class="color-panel"><div class="color-swatch" style="background-color: #f55a5a"></div><p>#F55A5A</p></div>
+                <div class="color-panel"><div class="color-swatch" style="background-color: #2b293a"></div><p>#2B293A</p></div>
+                <div class="color-panel"><div class="color-swatch" style="background-color: #fbf3ab"></div><p>#FBF3AB</p></div>
+                <div class="color-panel"><div class="color-swatch" style="background-color: #aad1b6"></div><p>#AAD1B6</p></div>
+                <div class="color-panel"><div class="color-swatch" style="background-color: #a01ac8"></div><p>#A01AC8</p></div>
+            </div>
         </div>
     </body>
 </html>
