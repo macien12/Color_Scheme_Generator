@@ -17,7 +17,7 @@ const colors = fetch(`https://www.thecolorapi.com/scheme?hex=${hex}&mode=${mode}
         return `
         <div class="color-panel">
             <div class="color-swatch" style="background-color: ${color.hex.value}"></div>
-        <p id="copyEl">${color.hex.value}</p>
+        <button type="button" class="copyEl">${color.hex.value}</button>
         </div>
         `
     }).join("")
@@ -25,9 +25,11 @@ const colors = fetch(`https://www.thecolorapi.com/scheme?hex=${hex}&mode=${mode}
 })
 }
 
-function copyEl(item){
-    const copyElement = document.getElementById("copyEl")
-    copyElement.select(); 
-    navigator.clipboard.writeText(copyElement.value);
-    alert("Copied the text: " + copyElement.value);
-}
+document.getElementById("color-panels").addEventListener("click", function(e) {
+    if (e.target.classList.contains("copyEl")) {
+        const hexValue = e.target.textContent
+        navigator.clipboard.writeText(hexValue);
+        alert("Copied the text: " + hexValue);
+    }
+})
+

@@ -67,3 +67,11 @@ body {
     display: flex;
     gap: 1em;
 }
+
+.copyEl {
+    border: none;
+    background-color: #1F2937;
+    color: #D5D4D8;
+    font-size: 1rem;
+    padding-top: 0.5em;
+}
